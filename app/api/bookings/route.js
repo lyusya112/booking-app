@@ -16,7 +16,7 @@ export async function POST(req) {
   });
 
   await fetch(
-    "https://api.telegram.org/botТВОЙ_ТОКЕН/sendMessage",
+    "https://api.telegram.org/bot8843359933:AAE_EjODK5-PD6KTTuOJgWH5o2M7pgYD1xo/sendMessage",
     {
       method: "POST",
       headers: {
