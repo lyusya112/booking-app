@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/prisma";
+import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -14,6 +14,29 @@ export async function POST(req) {
       comment: data.comment,
     },
   });
+
+  await fetch(
+    "https://api.telegram.org/botТВОЙ_ТОКЕН/sendMessage",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify({
+        chat_id: "8400365300",
+
+        text:
+          `🔥 Новая запись!\n\n` +
+          `👤 Имя: ${data.name}\n` +
+          `📞 Телефон: ${data.phone}\n` +
+          `💅 Услуга: ${data.service}\n` +
+          `📅 Дата: ${data.date}\n` +
+          `⏰ Время: ${data.time}\n` +
+          `📝 Комментарий: ${data.comment}`,
+      }),
+    }
+  );
 
   return NextResponse.json(booking);
 }
