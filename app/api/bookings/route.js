@@ -15,30 +15,6 @@ export async function POST(req) {
     },
   });
 
-  await fetch(
-    `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
-    {
-      method: "POST",
-
-      headers: {
-        "Content-Type": "application/json",
-      },
-
-      body: JSON.stringify({
-        chat_id: "8400365300",
-
-        text:
-          `🔥 Новая запись!\n\n` +
-          `👤 Имя: ${data.name}\n` +
-          `📞 Телефон: ${data.phone}\n` +
-          `💅 Услуга: ${data.service}\n` +
-          `📅 Дата: ${data.date}\n` +
-          `⏰ Время: ${data.time}\n` +
-          `📝 Комментарий: ${data.comment}`,
-      }),
-    }
-  );
-
   return NextResponse.json(booking);
 }
 
