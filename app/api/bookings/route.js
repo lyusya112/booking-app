@@ -25,7 +25,7 @@ export async function POST(req) {
       },
 
       body: JSON.stringify({
-        chat_id: process.env.TELEGRAM_CHAT_ID,
+        chat_id: "8400365300",
 
         text:
           `🔥 Новая запись!\n\n` +
