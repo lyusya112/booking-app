@@ -92,20 +92,34 @@ export default function Home() {
             <input
               style={styles.input}
               type="date"
+              min={new Date().toISOString().split("T")[0]}
               value={form.date}
               onChange={(e) =>
                 setForm({ ...form, date: e.target.value })
               }
             />
 
-            <input
-              style={styles.input}
-              type="time"
-              value={form.time}
-              onChange={(e) =>
-                setForm({ ...form, time: e.target.value })
-              }
-            />
+            <select
+  style={styles.input}
+  value={form.time}
+  onChange={(e) =>
+    setForm({ ...form, time: e.target.value })
+  }
+>
+  <option value="">
+    Выберите время
+  </option>
+
+  <option>10:00</option>
+  <option>11:00</option>
+  <option>12:00</option>
+  <option>13:00</option>
+  <option>14:00</option>
+  <option>15:00</option>
+  <option>16:00</option>
+  <option>17:00</option>
+  <option>18:00</option>
+</select>
           </div>
 
           <textarea
