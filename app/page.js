@@ -80,15 +80,11 @@ export default function Home() {
             </option>
 
             <option>
-              Маникюр
+              оформление бровей
             </option>
 
             <option>
-              Стрижка
-            </option>
-
-            <option>
-              Консультация
+              макияж любого характера
             </option>
           </select>
 
