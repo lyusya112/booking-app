@@ -5,25 +5,14 @@ export async function POST(req) {
   const data = await req.json();
 
   const booking = await prisma.booking.create({
-    data: {
-      name: data.name,
-      phone: data.phone,
-      service: data.service,
-      date: data.date,
-      time: data.time,
-      comment: data.comment,
-    },
+    data,
   });
 
   return NextResponse.json(booking);
 }
 
 export async function GET() {
-  const bookings = await prisma.booking.findMany({
-    orderBy: {
-      createdAt: "desc",
-    },
-  });
+  const bookings = await prisma.booking.findMany();
 
   return NextResponse.json(bookings);
 }
